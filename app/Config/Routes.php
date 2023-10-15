@@ -5,24 +5,42 @@ use CodeIgniter\Router\RouteCollection;
 /*
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('/about', 'Home::about');
-$routes->get('/jasa_travel', 'Home::jasa_travel');
 
-$routes->get('/login', 'Auth::index');
+// Pengunjung
+$routes->get('/', 'Home::index'); // Tampilan beranda
+$routes->get('/about', 'Home::about'); // Tampilan Tentang
+$routes->get('/about_kabkot/(:alphanum)', 'Home::about_kabkot/$1'); // Tampilkan daftar destinasi sesuai kabupaten kota
+$routes->get('/jasa_travel', 'Home::jasa_travel'); // Tampilan jasa travel
+$routes->get('/contact', 'Home::contact'); // Tampilan Kontak
 
-$routes->get('/contact', 'Home::contact');
+// Otentikasi
+$routes->get('/login', 'Auth::index'); // Tampilan Login
+$routes->get('/registrasi', 'Auth::index'); // Tampilan Registrasi
 
-$routes->get('/transaksi', 'Transaction::index');
+// Admin
+$routes->group('admin', function ($routes) {
+    // Dashboard
+    $routes->get('', 'Admin::index'); // Dashboard admin
 
-$routes->get('/about_kabkot/(:alphanum)', 'Home::about_kabkot/$1');
+    // Kabupaten-Kota
+    $routes->get('/admin/kabkot', 'Admin::kabkot'); // Tampilkan data kabupaten-kota
+    $routes->post('/admin/kabkot', 'Admin::save_kabkot'); // Tampilkan data kabupaten-kota
+    $routes->post('/admin/kabkot/update', 'Admin::update_kabkot'); // Ubah data kabupaten kota
+    $routes->get('/admin/delete_kabkot/(:alphanum)', 'Admin::delete_kabkot/$1'); // Hapus data kabupaten-kota
 
-$routes->get('/dashboard', 'Admin::index');
+    // Destinasi
+    $routes->get('/admin/destination', 'Admin::destination'); // Tampilkan data destinasi
+    $routes->post('/admin/destination', 'Admin::save_destination'); // Tambahkan data destinasi
+    $routes->post('/admin/destination/update', 'Admin::update_destination'); // Ubah data kabupaten kota
+    $routes->get('/admin/delete_destination/(:alphanum)', 'Admin::delete_destination/$1'); // Hapus data destinasi
 
-$routes->get('/admin/destination', 'Admin::destination');
-$routes->post('/admin/destination', 'Admin::save_destination');
-$routes->get('/admin/delete_destination/(:alphanum)', 'Admin::delete_destination/$1');
+    // Tour Guide
+    $routes->get('/admin/tour_guide/(:alphanum)', 'Admin::tour_guide/$1'); // Tampilkan data tour guide sesuai destianasi
+    $routes->post('/admin/tour_guide', 'Admin::save_tour_guide'); // Simpan data tour guide
+    $routes->post('/admin/tour_guide/update', 'Admin::update_tour_guide'); // Ubah data kabupaten kota
+    $routes->get('/admin/delete_tour_guide/(:alphanum)', 'Admin::delete_tour_guide/$1'); // Hapus data tour guide
 
-$routes->get('/admin/kabkot', 'Admin::kabkot');
-$routes->post('/admin/kabkot', 'Admin::save_kabkot');
-$routes->get('/admin/delete_kabkot/(:alphanum)', 'Admin::delete_kabkot/$1');
+    //  Transaksi
+    $routes->get('', ''); // Tampilkan transaksi
+    $routes->post('', ''); // Buat transaksi
+});

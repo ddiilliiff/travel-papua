@@ -71,6 +71,8 @@
                   <h6 class="collapse-header">Data Wisata</h6>
                   <a class="collapse-item" href="<?php echo base_url(); ?>admin/kabkot">Data Kabupaten/Kota</a>
                   <a class="collapse-item" href="<?php echo base_url(); ?>admin/destination">Data Destinasi</a>
+                  <a class="collapse-item" href="<?php echo base_url(); ?>admin/tourguide">Data Tour Guide</a>
+                  <!-- <a class="collapse-item" href="<?php echo base_url(); ?>admin/tourguide">Data Tour Guide</a> -->
                </div>
             </div>
          </li>

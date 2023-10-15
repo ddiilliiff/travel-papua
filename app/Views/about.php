@@ -96,7 +96,7 @@
 
                      <p class="section-subtitle">Destinations</p>
 
-                     <h2 class="h2 section-title">Destinasi Wisata Papua</h2>
+                     <h2 class="h2 section-title">Destinasi Wisata </h2>
 
                      <ul class="destination-list">
 
@@ -132,11 +132,12 @@
                </section>
                <br>
                <br>
-               <div class="btn-group">
-                  <a href="#" class="btn btn-primary">Booking</a>
+               <div class="btn-group flex">
+                  <h1 class="text-center">FASILITAS:</h1>
+                  <!-- <a href="#" class="btn btn-primary">Booking</a> -->
                   <a href="#" class="btn btn-primary">Pemandu Wisata</a>
-                  <a href="#" class="btn btn-primary">Jasa Travel</a>
                   <a href="#" class="btn btn-primary">Translator</a>
+                  <!-- <a href="#" class="btn btn-primary">Jasa Travel</a> -->
 
                   <!-- <a href="#" class="btn btn-outline">Learn More</a> -->
                </div>
@@ -314,10 +315,6 @@
       </div>
    </footer>
 
-
-
-
-
    <!-- 
     - #GO TO TOP
   -->
@@ -325,10 +322,6 @@
    <a href="#top" class="go-top" data-go-top aria-label="Go To Top">
       <ion-icon name="chevron-up-outline"></ion-icon>
    </a>
-
-
-
-
 
    <!-- 
     - custom js link

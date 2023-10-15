@@ -41,6 +41,12 @@
                            src="<?php echo base_url('thumbnail'); ?>/<?php echo $d['thumbnail']; ?>" alt="" srcset="">
                      </td>
                      <td class="justify-between">
+                        <!-- <a href="<?php echo base_url(); ?>detail_destination/<?php echo $d['id_kabkot']; ?>"
+                           class="btn btn-sm btn-primary"><i class="fas fa-eye fa-sm text-white-50"></i>
+                           Lihat</a> -->
+                        <a href="<?php echo base_url(); ?>tour_guide/<?php echo $d['id_kabkot']; ?>"
+                           class="btn btn-sm btn-secondary"><i class="fas fa-eye fa-sm text-white-50"></i>
+                           Tour Guide</a>
                         <a href="<?php echo base_url(); ?>detail_destination/<?php echo $d['id_kabkot']; ?>"
                            class="btn btn-sm btn-primary"><i class="fas fa-eye fa-sm text-white-50"></i>
                            Lihat</a>
